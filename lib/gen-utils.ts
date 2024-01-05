@@ -256,7 +256,7 @@ function rawTsType(schema: SchemaObject, options: Options, openApi: OpenAPIObjec
   }
 
   // A Blob
-  if (type === 'string' && schema.format === 'binary') {
+  if ((type === 'string' || type === 'multipartFile') && schema.format === 'binary') {
     return 'Blob';
   }
 
